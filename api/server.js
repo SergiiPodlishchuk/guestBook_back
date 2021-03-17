@@ -30,15 +30,15 @@ const MONGODB =
 app.use(cors());
 app.use(express.json());
 
-// app.use("/api/messages", messageRouters);
+app.use("/api/messages", messageRouters);
 
-app.get(
-  "/",
-  (req,
-  (res) => {
-    res.end(<h1>Helloooo</h1>);
-  })
-);
+// app.get(
+//   "/",
+//   (req,
+//   (res) => {
+//     res.end(<h1>Helloooo</h1>);
+//   })
+// );
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
