@@ -5,7 +5,7 @@ const app = express();
 
 const messageRouters = require("./messages/message.routers");
 
-const PORT = 5555;
+const PORT = process.env.PORT || 5555;
 
 const MONGODB =
   "mongodb+srv://podluy23:magazin12@cluster0.mkt5h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
@@ -29,7 +29,16 @@ const MONGODB =
 
 app.use(cors());
 app.use(express.json());
-app.use("/api/messages", messageRouters);
+
+// app.use("/api/messages", messageRouters);
+
+app.get(
+  "/",
+  (req,
+  (res) => {
+    res.end(<h1>Helloooo</h1>);
+  })
+);
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);

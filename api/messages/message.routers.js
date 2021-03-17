@@ -6,6 +6,10 @@ const messagesRouter = Router();
 
 messagesRouter.get("/", messageControllers.listMessages);
 
-messagesRouter.post("/", messageControllers.addMessage);
+messagesRouter.post(
+  "/",
+  messageControllers.validateMessage,
+  messageControllers.addMessage
+);
 
 module.exports = messagesRouter;
